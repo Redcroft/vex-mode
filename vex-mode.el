@@ -25,6 +25,7 @@
 
 ;; define several category of keywords
 ;;
+;; 2020.03.06 rename to general vex-mode
 ;; 2015.12.27 gearslogy:write the vex-mode to the major mode
 ;; write the yasnippets for the auto complete...
 ;; now set my gearslogy-vex-mode here....
@@ -88,7 +89,7 @@
 
 
 
-(defvar gearslogy-vex-mode-hook nil)
+(defvar vex-mode-hook nil)
 ;;put to list 
 (defun my:push-c++-keys(list-names)
   (push list-names vex-keywords))
@@ -130,21 +131,21 @@
 
 ;;;###autoload
 
-(define-derived-mode gearslogy-vex-mode c++-mode
-  "gearslogy-vex-mode"
+(define-derived-mode vex-mode c++-mode
+  "vex-mode"
   "Major mode for editing houdini vex …"
-  (setq mode-name "gearslogy-vex-mode")
+  (setq mode-name "vex-mode")
   
   ;; code for syntax highlighting
   (setq font-lock-defaults '((vex-font-lock-keywords))))
 
-(run-hooks 'gearslogy-vex-mode-hook)
+(run-hooks 'vex-mode-hook)
 
 
 
 (setq copy_vex_temp vex-functions)
 (require 'auto-complete)
-(add-to-list 'ac-modes 'gearslogy-vex-mode)
+(add-to-list 'ac-modes 'vex-mode)
 
 (defun my:ac-vex-mode-init()
   (defun mysource1-candidates ()
@@ -175,16 +176,16 @@
 (setq vex-functions-regexp nil)
 
 
-(add-to-list 'auto-mode-alist '("\\.vex$" . gearslogy-vex-mode))
+(add-to-list 'auto-mode-alist '("\\.vex$" . vex-mode))
 
 ;; add the mode to the `features' list
 
 
-(setq major-mode 'gearslogy-vex-mode)
-(provide 'gearslogy-vex-mode)
+(setq major-mode 'vex-mode)
+(provide 'vex-mode)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
 
-;;; gearslogy-vex-mode.el ends here
+;;; vex-mode.el ends here
