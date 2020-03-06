@@ -30,62 +30,105 @@
 ;; write the yasnippets for the auto complete...
 ;; now set my gearslogy-vex-mode here....
 
-(setq vex-keywords '("break" "default" "do" "else" "for" "if" "return" "switch" "while" "case" "class") )
+(setq vex-keywords '("break" "default" "do" "else" "for" "function" "if" "return" "switch" "while" "case" "class" "struct" "this" "void") )
 (setq vex-types '("float" "int" "vector" "matrix" "matrix3" "string" "matrix4"))
 (setq vex-constants '("ACTIVE" "AGENT" "ALL_SIDES" "ATTACH_BACK"))
 (setq vex-events '("at_rot_target" "at_target" "attach"))
-(setq vex-functions '("geoself" "Du" "Dv" "Dw" "abs" "accessframe" "acos" "addattrib" "addattribute" "adddetailattrib" "addgroup" "addpoint" "addpointattrib"
-                        "addprim" "addprimattrib" "addvariablename" "addvertex" "addvertexattrib" "agentclipcatalog" "agentcliplength" "agentclipnames" "agentclipsamplelocal"
-                        "agentclipsampleworld" "agentcliptimes" "agentcliptimes" "agentcollisionlayer" "agentcurrentlayer" "agentlayerbindings"
-                        "agentlayers" "agentlayershapes" "agentlocaltransform" "agentlocaltransforms" "agentrigchildren" "agentrigfind" "agentrigparent" "agenttransformcount" "agenttransformnames"
-                        "agenttransformtolocal" "agenttransformtoworld" "agentworldtransform" "agentworldtransforms" "albedo" "alphaname" "ambient"
-                        "anoise" "append" "area" "argsort" "array" "arraylength" "ashikhmin" "asin" "assgin" "atan" "atan2" "atan2" "atof" "atoi" "atten" "attribsize"
-                        "attribtype" "attribtypeinfo" "avg" "binput" "blackbody" "blinn" "blinnBRDF" "bouncelabel" "bouncemask" "bumpmap"
-                        "bumpmapA" "bumpmapB" "bumpmapG" "bumpmapR" "bumpmape" "cbrt"
-                        "ceil" "ch" "chs" "ch3" "ch4" "chend" "chendf" "chendt" "chi" "chinput" "chname" "chnumchan" "chp" "chr" "chramp" "chrate" "chsraw" "chstart" "chstartf" "chv" "cinput" "ckspline" "clamp" "clip"
-                        "colormap" "colorname" "computenormal" "concat" "cone" "cos" "cosh" "cracktransform" "cross" "cspline" "ctransform" "curlnoise" "curlnoise2d" "curlxnoise" "curlxnoise2d" "cvex_bsdf" "degrees" "depthmap"
-                        "depthname" "detail" "detailattrib" "detailattribsize" "detailattribtype" "detailattribtype" "detailintrinsic" "determinant" "diffuse" "diffuseBRDF" "dihedral" "dimport" "distance" "distance2"
-                        "dot" "dsmpixel" "eigenvalues" "emission_bsdf" "endswith" "environment" "erf" "erf_inv" "erfc" "eulertoquaternion" "eval_bsdf" "exp" "expandpointgroup" "expandprimgroup" "fastshadow" "filamentsample"
-                        "file_eof" "file_flush" "file_open" "file_read" "file_readline" "file_readlines" "file_seek" "file_size" "file_stat" "file_tell" "file_write" "file_writeline" "file_writelines" "filtershadow" "filterstep"
-                        "find" "findattribval" "findattribvalcount" "finput" "fit" "fit01" "fit10" "fit11" "floor" "flownoise" "flowpnoise" "forpoints" "foreach" "frac" "fresnel" "fromNDC"
-                        "frontface" "gather" "geoself" "getattribute" "getbbox" "getblurP" "getbounces" "getbounds" "getcomp" "getcomponents" "getfogname" "getglobalraylevel" "getlight" "getlightid" "getlightname"
-                        "getlights" "getlightscope" "getmaterial" "getobjectname" "getobjectname" "getpointbbox" "getprimid" "getptextureid" "getraylevel" "getrayweight" "getscope" "getspace" "gradient" "gradient3d"
-                        "hair" "hasdetailattrib" "haslight" "hasplane" "haspointattrib" "hasprimattrib" "hasvertexattrib" "hedge_dstpoint" "hedge_dstvertex" "hedge_equivcount" "hedge_isequiv" "hedge_isprimary"
-                        "hedge_isvalid" "hedge_next" "hedge_nextequiv" "hedge_postdstpoint" "hedge_postdstvertex" "hedge_presrcpoint" "hedge_presrcvertex" "hedge_prev" "hedge_prim" "hedge_primary" "hedge_srcpoint"
-                        "hedge_srcvertex" "hedge_srcvertex" "hscript_noise" "hscript_rand" "hscript_snoise" "hscript_sturb" "hscript_turb" "hsvtorgb" "iaspect" "ichname" "ident" "iend" "iendtime" "ihasplane"
-                        "illuminance" "import" "importance_light" "ingroup" "inpointgroup" "inprimgroup" "insert" "instance" "integrate3d" "integrate3dClip" "interpolate" "intersect" "intersect3d" "intersect_all"
-                        "intersect_lights" "intersect_lights" "invert" "iplaneindex" "iplanename" "iplanesize" "irate" "irradiance" "isalpha" "isbound" "isconnected" "isdigit" "isfinite" "isfogray" "isframes" "isnan"
-                        "isotropic" "israytracing" "issamples" "issamples" "isshadowray" "istart" "istarttime" "istracing" "isuvrendering" "isvalidindex"
-                        "isvarying" "itoa" "ixres" "iyres" "join" "kspline" "len" "length" "length2" "lerp" "lightid" "limit_sample_space" "limport" "lkspline" "log" "log10" "lookat" "lspline" "lstrip"
-                        "luminance" "lumname" "makebasis" "maketransform" "maskname" "match" "matchvex_blinn" "matchvex_specular" "mattrib" "max" "mdensity" "metaimport" "metamarch" "metanext" "metastart" "metaweight"
-                        "min" "minpos" "mspace" "nbouncetypes" "nearpoint" "nearpoints" "neighbour" "neighbourcount" "neighbours" "newgroup" "newsampler" "nextsample" "ninput" "noise" "noised" "normal_bsdf" "normalize"
-                        "normalname" "npoints" "npointsgroup" "nprimitives" "nprimitivesgroup" "nrandom" "ntransform" "nuniqueval" "occlusion" "onoise" "opend" "opstart" "optransform" "ord" "osd_facecount"
-                        "osd_firstpatch" "osd_limitsurface" "osd_limitsurfacevertex" "osd_patchcount" "osd_patches" "outerproduct" "ow_nspace" "ow_space" "ow_vspace" "pack_inttosafefloat" "pathtrace"
-                        "pcclose" "pcconvex" "pcexport" "pcfarthest" "pcfilter" "pcfind" "pcfind_radius" "pcgenerate" "pcimport" "pcimportbyidx3" "pcimportbyidx4" "pcimportbyidxf" "pcimportbyidxi"
-                        "pcimportbyidxp" "pcimportbyidxs" "pcimportbyidxv" "pciterate" "pcnumfound" "pcopen" "pcopenlod" "pcsampleleaf" "pcsize" "pcunshaded" "pcwrite" "phong" "phongBRDF" "phonglobe" "planeindex"
-                        "planename" "planesize" "pluralize" "pnoise" "point" "pointattrib" "pointattribsize" "pointattribtype" "pointattribtypeinfo" "pointedge" "pointhedge" "pointhedgenext" "pointname" "pointprims"
-                        "pointprims" "pointvertices" "polardecomp" "pop" "pow" "prim" "prim_attribute" "prim_normal" "primattrib" "primattribsize" "primattribtype" "primattribtypeinfo" "primhedge" "primintrinsic"
-                        "primpoint" "primpoints" "primuv" "primvertex" "primvertexcount" "primvertices" "printf" "ptexture" "ptlined" "ptransform" "push" "qconvert" "qdistance"
-                        "qinvert" "qmultiply" "qrotate" "quaternion" "radians" "rand" "random" "random_fhash" "random_ihash" "random_shash" "random_sobol" "rawbumpmap" "rawbumpmapA" "rawbumpmapB" "rawbumpmapG"
-                        "rawbumpmapG" "rawbumpmapL" "rawbumpmapY" "rawcolormap" "rayhittest" "rayimport" "re_find" "re_findall" "re_match" "re_replace" "re_split" "reflect" "reflectlight" "refract" "refractlight"
-                        "relbbox" "relpointbbox" "removegroup" "removeindex" "removeindex" "removeprim" "removevalue" "removepoint" "renderstate" "reorder" "resize" "resolvemissedray" "reverse"
-                        "rgbtohsv" "rgbtoxyz" "rint" "rotate" "rotate_x_to" "rstrip" "sample_bsdf" "sample_cauchy" "sample_circle_arc" "sample_circle_edge_uniform" "sample_circle_slice" "sample_circle_uniform"
-                        "sample_direction_cone" "sample_direction_uniform" "sample_discrete"
-                        "sample_exponential" "sample_geometry" "sample_hemisphere" "sample_hypersphere_cone" "sample_hypersphere_uniform" "sample_light" "sample_lognormal" "sample_lognormal_by_median"
-                        "sample_normal" "sample_orientation_cone" "	sample_orientation_uniform" "sample_photon"
-                        "sample_sphere_cone" "sample_sphere_uniform" "sampledisk" "scale" "select" "sensor_panorama_create" "sensor_panorama_getcolor" "sensor_panorama_getcone" "sensor_panorama_getdepth"
-                        "sensor_save" "serialize" "set" "setagentclipnames" "setagentclipweights" "setagentcollisionlayer" "setagentworldtransform" "setagentlocaltransforms" "setagentworldtransforms"
-                        "setattrib" "setattribtypeinfo" "setcomp" "setcurrentlight" "setdetailattrib" "setpointattrib" "setpointgroup" "setprimattrib" "setprimgroup"
-                        "setprimintrinsic" "setprimvertex" "setvertexattrib" "shadow" "shadow_light" "shadowmap" "shimport" "shl" "shr" "shrz" "sign" "simport" "sin" "sinh" "sleep" "slerp" "slice" "smooth"
-                        "snoise" "solvecubic" "solvepoly" "solvequadratic" "sort" "specular" "specularBRDF" "spline" "split" "sqrt" "sprintf" "startswith" "storelightexport" "strip" "strlen" "switch"
-                        "swizzle" "tan" "tanh" "tet_adjacent" "tet_faceindex" "teximport" "texture" "texture3d" "texture3dBox" "titlecase" "toNDC" "tolower" "toupper" "trace" "translate"
-                        "translucent" "transpose" "trunc" "tw_nspace" "tw_space" "tw_vspace" "uniqueval" "unpack_intfromsafefloat" "unserialize" "upush" "variadicarguments" "variance" "velocityname"
-                        "vertex" "vertexattrib" "vertexattribsize" "vertexattribtype" "vertexattribtypeinfo" "vertexhedge" "vertexindex" "vertexnext"
-                        "vertexpoint" "vertexpoint" "vertexprim" "vertexprimindex" "vnoise" "volume" "volumegradient" "volumeindex" "volumeindexorigin" "volumeindextopos" "volumeindexv" "volumepostoindex"
-                        "volumeres" "volumesample" "volumesamplev" "vtransform" "wireblinn" "wirediffuse" "wnoise" "wo_nspace" "wo_space"
-                        "wo_space" "writepixel" "wt_nspace" "wt_space" "wt_vspace" "xnoise" "xnoised" "xyzdist" "xyztorgb" 
-                      
-                       ))
+(setq vex-functions '(“abs" "abspath" "accessframe" "acos" "addattrib" "adddetailattrib" "addpoint" "addpointattrib“
+                          “addprim" "addprimattrib" "addvariablename" "addvertex" "addvertexattrib" "addvisualizer“
+                          “agentaddclip" "agentchannelnames" "agentchannelvalue" "agentchannelvalues“
+                          “agentclipcatalog" "agentclipchannel" "agentclipchannelnames" "agentcliplength“
+                          “agentclipnames" "agentclipsample" "agentclipsamplelocal" "agentclipsamplerate“
+                          “agentclipsampleworld" "agentclipstarttime" "agentcliptimes" "agentcliptransformgroups“
+                          “agentclipweights" "agentcollisionlayer" "agentcurrentlayer" "agentfindtransformgroup“
+                          “agentlayerbindings" "agentlayers" "agentlayershapes" "agentlocaltransform“
+                          “agentlocaltransforms" "agentrigchildren" "agentrigfind" "agentrigfindchannel“
+                          “agentrigparent" "agentsolvefbik" "agenttransformcount" "agenttransformgroupmember“
+                          “agenttransformgroupmemberchannel" "agenttransformgroups" "agenttransformgroupweight“
+                          “agenttransformnames" "agenttransformtolocal" "agenttransformtoworld“
+                          “agentworldtransform" "agentworldtransforms" "albedo" "alphaname" "ambient" "anoise" "append“
+                          “area" "argsort" "array" "ashikhmin" "asin" "assign" "atan" "atan2" "atof" "atoi" "atten" "attrib“
+                          “attribclass" "attribdataid" "attribsize" "attribtype" "attribtypeinfo" "avg" "binput“
+                          “blackbody" "blinn" "bouncelabel" "bouncemask" "bumpname" "cbrt" "ceil" "ch" "ch2" "ch3" "ch4" "chadd“
+                          “chattr" "chattrnames" "chend" "chendf" "chendt" "chexpr" "chexprf" "chexprt" "chf" "chi" "chid“
+                          “chindex" "chinput" "chinputlimits" "chname" "chnames" "chnumchan" "chop" "choplocal" "choplocalt“
+                          “chopt" "chp" "chr" "chramp" "chrampderiv" "chrate" "chreadbuf" "chremove" "chremoveattr" "chrename“
+                          “chresizebuf" "chs" "chsetattr" "chsetlength" "chsetrate" "chsetstart" "chsop" "chsraw" "chstart“
+                          “chstartf" "chstartt" "chu" "chv" "chwritebuf" "cinput" "ckspline" "clamp" "clip" "colormap“
+                          “colorname" "combinelocaltransform" "computenormal" "concat" "cone" "cos" "cosh“
+                          “cracktransform" "cregioncapturetransform" "cregiondeformtransform“
+                          “cregionoverridetransform" "cross" "cspline" "ctransform" "curlnoise" "curlnoise2d“
+                          “curlxnoise" "curlxnoise2d" "cwnoise" "decode" "decodeattrib" "decodeparm" "degrees" "depthmap“
+                          “depthname" "detail" "detailattrib" "detailattribsize" "detailattribtype“
+                          “detailattribtypeinfo" "detailintrinsic" "determinant" "diagonalizesymmetric" "diffuse“
+                          “dihedral" "dimport" "distance" "distance2" "dot" "dsmpixel" "Du" "Dv" "Dw" "efit" "eigenvalues“
+                          “encode" "encodeattrib" "encodeparm" "endswith" "environment" "erf" "erfc" "error“
+                          “eulertoquaternion" "exp" "expandedgegroup" "expandpointgroup" "expandprimgroup“
+                          “expandvertexgroup" "extractlocaltransform" "fastshadow" "filamentsample" "filtershadow“
+                          “filterstep" "find" "findattribval" "findattribvalcount" "finput" "fit" "fit01" "fit10" "fit11“
+                          “floor" "flownoise" "flowpnoise" "foreach" "forpoints" "frac" "fresnel" "frontface" "fuzzify“
+                          “gather" "geoself" "geounwrap" "getattrib" "getattribute" "getbbox" "getbounces" "getbounds“
+                          “getcomp" "getcomponents" "getderiv" "getfogname" "getglobalraylevel" "getgroupid" "getlight“
+                          “getlightid" "getlightname" "getlights" "getlightscope" "getlocalcurvature" "getmaterial“
+                          “getmaterialid" "getobjectid" "getobjectname" "getpackedtransform" "getphotonlight“
+                          “getpointbbox" "getprimid" "getptextureid" "getraylevel" "getrayweight" "getsamplestore“
+                          “getscope" "getspace" "getuvtangents" "ggx" "gradient" "hair" "hasattrib" "hasdetailattrib“
+                          “haslight" "hasmetadata" "hasplane" "haspointattrib" "hasprimattrib" "hasvertexattrib“
+                          “henyeygreenstein" "hsvtorgb" "iaspect" "ichname" "ident" "idtopoint" "idtoprim" "iend" "iendtime“
+                          “ihasplane" "illuminance" "inedgegroup" "inpointgroup" "inprimgroup" "insert" "instance“
+                          “interpolate" "intersect" "inumplanes" "invert" "invertexgroup" "iplaneindex" "iplanename“
+                          “iplanesize" "irate" "irradiance" "isalpha" "isbound" "isconnected" "isdigit" "isfinite“
+                          “isfogray" "isframes" "islpeactive" "isnan" "isotropic" "israytracing" "issamples" "isseconds“
+                          “isshadowray" "istart" "istarttime" "isuvrendering" "isvalidindex" "isvarying" "itoa" "ixres“
+                          “iyres" "join" "kspline" "len" "length" "length2" "lerp" "lightbounces" "lightid" "lightstate“
+                          “limport" "lkspline" "log" "log10" "lookat" "lspline" "lstrip" "luminance" "lumname" "makebasis“
+                          “maketransform" "maskname" "match" "mattrib" "max" "mdensity" "metadata" "metaimport" "metamarch“
+                          “metanext" "metastart" "metaweight" "min" "minpos" "mspace" "mwnoise" "nametopoint" "nametoprim“
+                          “nbouncetypes" "ndcdepth" "nearpoint" "nearpoints" "nedgesgroup" "neighbour" "neighbourcount“
+                          “neighbours" "newsampler" "nextsample" "ninput" "ninputs" "noise" "noised" "normalize“
+                          “normalname" "npoints" "npointsgroup" "nprimitives" "nprimitivesgroup" "nrandom" "ntransform“
+                          “nuniqueval" "nvertices" "nverticesgroup" "objectstate" "occlusion" "onoise" "opdigits" "opend“
+                          “opfullpath" "opid" "opparentbonetransform" "opparenttransform" "opparmtransform“
+                          “oppreconstrainttransform" "oppreparmtransform" "opprerawparmtransform" "oppretransform“
+                          “oprawparmtransform" "opstart" "optransform" "ord" "orthographic" "outerproduct“
+                          “packedtransform" "pathtrace" "pcclose" "pccone" "pcconvex" "pcexport" "pcfarthest" "pcfilter“
+                          “pcfind" "pcgenerate" "pcimport" "pcimportbyidx3" "pcimportbyidx4" "pcimportbyidxf“
+                          “pcimportbyidxi" "pcimportbyidxp" "pcimportbyidxs" "pcimportbyidxv" "pciterate" "pcline“
+                          “pcnumfound" "pcopen" "pcopenlod" "pcsampleleaf" "pcsegment" "pcsize" "pcunshaded" "pcwrite“
+                          “perspective" "pgfind" "phong" "phonglobe" "photonmap" "planeindex" "planename“
+                          “planepointdistance" "planesize" "planesphereintersect" "pluralize" "pnoise" "point“
+                          “pointattrib" "pointattribsize" "pointattribtype" "pointattribtypeinfo" "pointedge“
+                          “pointhedge" "pointhedgenext" "pointname" "pointprims" "pointvertex" "pointvertices“
+                          “polardecomp" "polyneighbours" "pop" "pow" "premul" "prerotate" "prescale" "pretranslate" "prim“
+                          “primarclen" "primattrib" "primattribsize" "primattribtype" "primattribtypeinfo" "primduv“
+                          “primfind" "primhedge" "primintrinsic" "primpoint" "primpoints" "primuv" "primuvconvert“
+                          “primvertex" "primvertexcount" "primvertices" "printf" "product" "ptexture" "ptlined“
+                          “ptransform" "push" "pxnoised" "qconvert" "qdistance" "qinvert" "qmultiply" "qrotate" "quaternion“
+                          “quaterniontoeuler" "radians" "rand" "random" "rawcolormap" "rayhittest" "rayimport" "reflect“
+                          “reflectlight" "refract" "refractlight" "relativepath" "relbbox" "relpath" "relpointbbox“
+                          “removeindex" "removepoint" "removeprim" "removevalue" "removevertex" "renderstate" "reorder“
+                          “resize" "resolvemissedray" "reverse" "rgbtohsv" "rgbtoxyz" "rint" "rotate" "rstrip" "sampledisk“
+                          “scale" "scatter" "select" "serialize" "set" "setagentchannelvalue" "setagentchannelvalues“
+                          “setagentclipnames" "setagentclips" "setagentcliptimes" "setagentclipweights“
+                          “setagentcollisionlayer" "setagentcurrentlayer" "setagentlocaltransform“
+                          “setagentlocaltransforms" "setagentworldtransform" "setagentworldtransforms" "setattrib“
+                          “setattribtypeinfo" "setcomp" "setcurrentlight" "setdetailattrib" "setdetailintrinsic“
+                          “setedgegroup" "setpackedtransform" "setpointattrib" "setpointgroup" "setprimattrib“
+                          “setprimgroup" "setprimintrinsic" "setprimvertex" "setsamplestore" "setvertexattrib“
+                          “setvertexgroup" "setvertexpoint" "shadow" "shadowmap" "shimport" "shl" "shr" "shrz" "sign“
+                          “simport" "sin" "sinh" "sleep" "slerp" "slice" "slideframe" "smooth" "smoothrotation" "snoise“
+                          “solveconstraint" "solvecubic" "solvecurve" "solvefbik" "solveik" "solvepoly" "solvequadratic“
+                          “sort" "specular" "spline" "split" "splitpath" "sprintf" "sqrt" "sssapprox" "startswith“
+                          “storelightexport" "strip" "strlen" "sum" "surfacedist" "svddecomp" "switch" "swizzle" "tan" "tanh“
+                          “teximport" "texprintf" "texture" "texture3d" "titlecase" "tolower" "toupper" "trace" "translate“
+                          “translucent" "transpose" "trunc" "uniqueval" "uniquevals" "unserialize" "upush" "uvdist“
+                          “uvintersect" "uvsample" "uvunwrap" "variance" "velocityname" "vertex" "vertexattrib“
+                          “vertexattribsize" "vertexattribtype" "vertexattribtypeinfo" "vertexhedge" "vertexindex“
+                          “vertexnext" "vertexpoint" "vertexprev" "vertexprim" "vertexprimindex" "vnoise" "volume“
+                          “volumegradient" "volumeindex" "volumeindexactive" "volumeindexorigin" "volumeindextopos“
+                          “volumeindexv" "volumepostoindex" "volumeres" "volumesample" "volumesamplev“
+                          “volumevoxeldiameter" "vtransform" "warning" "wireblinn" "wirediffuse" "wnoise" "writepixel“
+                          “xnoise" "xnoise" "xnoised" "xyzdist" "xyztorgb“))
 
 
 
